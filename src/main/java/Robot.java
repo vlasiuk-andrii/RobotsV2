@@ -22,8 +22,7 @@ public class Robot {
                 if (5 == myNumber && stuff.p3 == false && stuff.c2 == false){ stuff.p3 = true; stuff.c2 = true; }
                 if (6 == myNumber && stuff.p3 == false && stuff.c3 == false){ stuff.p3 = true; stuff.c3 = true; }
             }
-            charge+= 10;
-            wasCharged = true;
+            if (charge<95){charge+= 10; wasCharged = true;}
         }
 
         //greedy
@@ -35,8 +34,9 @@ public class Robot {
                 if (4 == myNumber){ stuff.p2 = true; stuff.c2 = true; }
                 if (5 == myNumber){ stuff.p3 = true; stuff.c2 = true; }
                 if (6 == myNumber){ stuff.p3 = true; stuff.c3 = true; }
-                charge+= 10;
-                wasCharged = true;
+                if (100 == charge){
+                    //
+                } else if (charge<95){charge+= 10; wasCharged = true;}
             } else if ((charge>=60) && (charge<=100)){
                 stuff.p1 = false;
                 stuff.p2 = false;

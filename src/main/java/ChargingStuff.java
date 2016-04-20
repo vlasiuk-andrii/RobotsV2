@@ -6,4 +6,5 @@ public class ChargingStuff {
     boolean c2 = false;
     boolean p3 = false;
     boolean c3 = false;
+
 }
