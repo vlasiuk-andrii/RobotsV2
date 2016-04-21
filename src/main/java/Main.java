@@ -42,7 +42,7 @@ public class Main {
             r4.todo();
             r5.todo();
             r6.todo();
-            
+
             r1.wasCharged = false;
             r2.wasCharged = false;
             r3.wasCharged = false;
