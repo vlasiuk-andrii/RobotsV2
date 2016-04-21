@@ -4,7 +4,7 @@ public class Main {
         ChargingStuff stuff = new ChargingStuff();
         input.makeInput();
         double time = 0;
-        int minCharge = 10;
+        int minCharge = 0;
         int maxCharge = 100;
 
         Robot r1 = new Robot(1);
@@ -29,23 +29,28 @@ public class Main {
             if(0 != r4.charge) {r4.charge -= 5;}
             if(0 != r5.charge) {r5.charge -= 5;}
             if(0 != r6.charge) {r6.charge -= 5;}
+            stuff.r1charge = r1.charge;
+            stuff.r2charge = r2.charge;
+            stuff.r3charge = r3.charge;
+            stuff.r4charge = r4.charge;
+            stuff.r5charge = r5.charge;
+            stuff.r6charge = r6.charge;
+
+            r1.todo();
+            r2.todo();
+            r3.todo();
+            r4.todo();
+            r5.todo();
+            r6.todo();
+
+
             r1.wasCharged = false;
             r2.wasCharged = false;
             r3.wasCharged = false;
             r4.wasCharged = false;
             r5.wasCharged = false;
             r6.wasCharged = false;
-
-            r1.todo(); r2.todo(); r3.todo(); r4.todo(); r5.todo();
-            System.out.println("  r1 charge="+r1.charge+ "   c=" +stuff.c3+ "   p=" +stuff.p1+ "   wasCharged=" +r1.wasCharged);
-            System.out.println("  r2 charge="+r2.charge+ "   c=" +stuff.c1+ "   p=" +stuff.p1+ "   wasCharged=" +r2.wasCharged);
-            System.out.println("  r3 charge="+r3.charge+ "   c=" +stuff.c1+ "   p=" +stuff.p2+ "   wasCharged=" +r3.wasCharged);
-            System.out.println("  r4 charge="+r4.charge+ "   c=" +stuff.c2+ "   p=" +stuff.p2+ "   wasCharged=" +r4.wasCharged);
-            System.out.println("  r5 charge="+r5.charge+ "   c=" +stuff.c2+ "   p=" +stuff.p3+ "   wasCharged=" +r5.wasCharged);
-            System.out.println("  r6 charge="+r6.charge+ "   c=" +stuff.c3+ "   p=" +stuff.p3+ "   wasCharged=" +r6.wasCharged);
-        } while (time<10); /*((r1.charge>0)&&(r2.charge>0)&&(r3.charge>0)&&(r4.charge>0)&&(r5.charge>0)&&(r6.charge>0));*/
-
-
+        } while ((r1.charge>minCharge)&&(r2.charge>minCharge)&&(r3.charge>minCharge)&&(r4.charge>minCharge)&&(r5.charge>minCharge)&&(r6.charge>minCharge));
 
     }
 }
