@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] arg) {
         Input input = new Input();
-        ChargingStuff stuff = new ChargingStuff();
+        Values stuff = new Values();
         input.makeInput();
         double time = 0;
         int minCharge = 0;
